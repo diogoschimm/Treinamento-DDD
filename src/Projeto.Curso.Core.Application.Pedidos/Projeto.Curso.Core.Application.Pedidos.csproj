@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Projeto.Curso.Core.Domain.Pedidos\Projeto.Curso.Core.Domain.Pedidos.csproj" />
+    <ProjectReference Include="..\Projeto.Curso.Core.Domain.Shared\Projeto.Curso.Core.Domain.Shared.csproj" />
+    <ProjectReference Include="..\Projeto.Curso.Core.Infra.CrossCutting\Projeto.Curso.Core.Infra.CrossCutting.csproj" />
+  </ItemGroup>
+
+</Project>
