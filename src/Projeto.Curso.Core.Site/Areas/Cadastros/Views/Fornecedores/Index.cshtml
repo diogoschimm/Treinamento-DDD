@@ -1,16 +1,16 @@
 ﻿@{
-    ViewData["Title"] = "Clientes";
+    ViewData["Title"] = "Fornecedores";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Clientes - Listagem</h1>
+<h1>Fornecedores - Listagem</h1>
 
 <p>
-    <a asp-action="Create" class="btn btn-primary">Novo Cliente</a>
+    <a asp-area="Cadastros" asp-controller="Fornecedores" asp-action="Create" class="btn btn-primary">Novo Fornecedor</a>
 </p>
 <hr />
 
-<table class="table table-hover table-bordered" id="tbgrid" style="width: 100%;" >
+<table class="table table-hover table-bordered" id="tbgrid" style="width: 100%;">
     <thead>
         <tr> 
             <th class="no-sort">#</th>
@@ -83,7 +83,7 @@
             }
         ];
         $(document).ready(function () {
-            ListagemConsulta("tbgrid", urlClientes, colunas)
+            ListagemConsulta("tbgrid", urlFornecedores, colunas)
         });
     </script>
 

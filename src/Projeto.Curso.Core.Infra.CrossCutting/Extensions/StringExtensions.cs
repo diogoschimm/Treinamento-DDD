@@ -52,7 +52,7 @@ namespace Projeto.Curso.Core.Infra.CrossCutting.Extensions
                 if (strIn.Length == 11)
                 {
                     /// 123.456.789-01
-                    return strIn.Substring(0,3) + ".";
+                    return strIn.Substring(0, 3) + "." + strIn.Substring(3, 3) + "." + strIn.Substring(6, 3) + "-" + strIn.Substring(9, 2);
                 }
             }
             return "";

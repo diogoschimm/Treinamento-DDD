@@ -3,29 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 using Projeto.Curso.Core.Application.Pedidos.Interfaces;
 
 namespace Projeto.Curso.Core.Site.Areas.Cadastros.Controllers
 {
     [Area("Cadastros")]
-    public class ClientesController : Controller
+    public class FornecedoresController : Controller
     {
-        private readonly IClienteAppService _clienteAppService;
+        private readonly IFornecedorAppService _fornecedorAppService;
 
-        public ClientesController(IClienteAppService clienteAppService)
+        public FornecedoresController(IFornecedorAppService fornecedorAppService)
         {
-            this._clienteAppService = clienteAppService;
+            this._fornecedorAppService = fornecedorAppService;
         }
 
         public IActionResult Index()
-        { 
+        {
             return View();
         }
-
-        public JsonResult ListagemClientesJson()
+        public JsonResult ListagemFornecedoresJson()
         {
-            var model = this._clienteAppService.GetAll(); 
+            var model = this._fornecedorAppService.GetAll();
             return Json(model);
         }
     }
