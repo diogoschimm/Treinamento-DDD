@@ -15,9 +15,9 @@ namespace Projeto.Curso.Core.Application.Pedidos.AutoMapper
         public ViewModelToDomainMappingProfile()
         {
             CreateMap<ClienteViewModel, Cliente>()
-                .ForPath(to => to.Documento.Numero.OnlyNumbers(), opt => opt.MapFrom(from => from.Documento))
+                .ForPath(to => to.Documento.Numero, opt => opt.MapFrom(from => from.Documento.OnlyNumbers()))
                 .ForPath(to => to.Email.Endereco, opt => opt.MapFrom(from => from.Email))
-                .ForPath(to => to.Endereco.CEP.Codigo.OnlyNumbers(), opt => opt.MapFrom(from => from.CEP))
+                .ForPath(to => to.Endereco.CEP.Codigo, opt => opt.MapFrom(from => from.CEP.OnlyNumbers()))
                 .ForPath(to => to.Endereco.Logradouro, opt => opt.MapFrom(from => from.Logradouro))
                 .ForPath(to => to.Endereco.Numero, opt => opt.MapFrom(from => from.NumeroEndereco))
                 .ForPath(to => to.Endereco.Bairro, opt => opt.MapFrom(from => from.Bairro))
@@ -25,9 +25,9 @@ namespace Projeto.Curso.Core.Application.Pedidos.AutoMapper
                 .ForPath(to => to.Endereco.UF.Estado.Sigla, opt => opt.MapFrom(from => from.UF));
 
             CreateMap<FornecedorViewModel, Fornecedor>()
-                .ForPath(to => to.Documento.Numero.OnlyNumbers(), opt => opt.MapFrom(from => from.Documento))
+                .ForPath(to => to.Documento.Numero, opt => opt.MapFrom(from => from.Documento))
                 .ForPath(to => to.Email.Endereco, opt => opt.MapFrom(from => from.Email))
-                .ForPath(to => to.Endereco.CEP.Codigo.OnlyNumbers(), opt => opt.MapFrom(from => from.CEP))
+                .ForPath(to => to.Endereco.CEP.Codigo, opt => opt.MapFrom(from => from.CEP))
                 .ForPath(to => to.Endereco.Logradouro, opt => opt.MapFrom(from => from.Logradouro))
                 .ForPath(to => to.Endereco.Numero, opt => opt.MapFrom(from => from.NumeroEndereco))
                 .ForPath(to => to.Endereco.Bairro, opt => opt.MapFrom(from => from.Bairro))

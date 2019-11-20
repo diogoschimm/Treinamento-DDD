@@ -16,21 +16,21 @@ namespace Projeto.Curso.Core.Application.Pedidos.AutoMapper
         {
             CreateMap<Cliente, ClienteViewModel>()
                 .ConvertUsing((origem, destino) =>
-                {
-                    //destino.Id = origem.Id;
-                    //destino.Apelido = origem.Apelido;
-                    //destino.Nome = origem.Nome;
-
-                    destino.Documento = origem.Documento.Numero.ToDocumento();
-                    destino.Email = origem.Email.Endereco;
-                    destino.CEP = origem.Endereco.CEP.Codigo;
-                    destino.Logradouro = origem.Endereco.Logradouro;
-                    destino.NumeroEndereco = origem.Endereco.Numero;
-                    destino.Bairro = origem.Endereco.Bairro;
-                    destino.Cidade = origem.Endereco.Cidade;
-                    destino.UF = origem.Endereco.UF.Estado.Sigla;
-
-                    return destino;
+                { 
+                    return new ClienteViewModel
+                    {
+                        Id = origem.Id,
+                        Apelido = origem.Apelido,
+                        Nome = origem.Nome,
+                        Documento = origem.Documento.Numero.ToDocumento(),
+                        Email = origem.Email.Endereco,
+                        CEP = origem.Endereco.CEP.Codigo,
+                        Logradouro = origem.Endereco.Logradouro,
+                        NumeroEndereco = origem.Endereco.Numero,
+                        Bairro = origem.Endereco.Bairro,
+                        Cidade = origem.Endereco.Cidade,
+                        UF = origem.Endereco.UF.Estado.Sigla
+                    }; 
                 });
 
                 //.ForMember(to => to.Documento, opt => opt.MapFrom(from => from.Documento.Numero.ToDocumento()))
@@ -45,20 +45,20 @@ namespace Projeto.Curso.Core.Application.Pedidos.AutoMapper
             CreateMap<Fornecedor, FornecedorViewModel>()
                 .ConvertUsing((origem, destino) =>
                 {
-                    //destino.Id = origem.Id;
-                    //destino.Apelido = origem.Apelido;
-                    //destino.Nome = origem.Nome;
-
-                    destino.Documento = origem.Documento.Numero.ToDocumento();
-                    destino.Email = origem.Email.Endereco;
-                    destino.CEP = origem.Endereco.CEP.Codigo;
-                    destino.Logradouro = origem.Endereco.Logradouro;
-                    destino.NumeroEndereco = origem.Endereco.Numero;
-                    destino.Bairro = origem.Endereco.Bairro;
-                    destino.Cidade = origem.Endereco.Cidade;
-                    destino.UF = origem.Endereco.UF.Estado.Sigla;
-
-                    return destino;
+                    return new FornecedorViewModel
+                    {
+                        Id = origem.Id,
+                        Apelido = origem.Apelido,
+                        Nome = origem.Nome,
+                        Documento = origem.Documento.Numero.ToDocumento(),
+                        Email = origem.Email.Endereco,
+                        CEP = origem.Endereco.CEP.Codigo,
+                        Logradouro = origem.Endereco.Logradouro,
+                        NumeroEndereco = origem.Endereco.Numero,
+                        Bairro = origem.Endereco.Bairro,
+                        Cidade = origem.Endereco.Cidade,
+                        UF = origem.Endereco.UF.Estado.Sigla
+                    };
                 });
                 //.ForMember(to => to.Documento, opt => opt.MapFrom(from => from.Documento.Numero.ToDocumento()))
                 //.ForMember(to => to.Email, opt => opt.MapFrom(from => from.Email.Endereco))

@@ -21,10 +21,11 @@ namespace Projeto.Curso.Core.Infra.Data.Repositories
 
         public override IEnumerable<Cliente> GetAll()
         {
-            var str = new StringBuilder();
-            str.Append(@"SELECT * FROM Clientes ORDER BY id DESC");
+            //var str = new StringBuilder();
+            //str.Append(@"SELECT * FROM Clientes ORDER BY id DESC");
 
-            return this.pedidosContext.Database.GetDbConnection().Query<Cliente>(str.ToString());
+            // return this.pedidosContext.Database.GetDbConnection().Query<Cliente>(str.ToString());
+            return this.pedidosContext.Clientes;
         }
         public override Cliente GetById(int id)
         {

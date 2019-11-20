@@ -7,6 +7,7 @@ using Projeto.Curso.Core.Application.Pedidos.Interfaces;
 
 namespace Projeto.Curso.Core.Site.Areas.Cadastros.Controllers
 {
+    [Area("Cadastros")]
     public class ClientesController : Controller
     {
         private readonly IClienteAppService _clienteAppService;

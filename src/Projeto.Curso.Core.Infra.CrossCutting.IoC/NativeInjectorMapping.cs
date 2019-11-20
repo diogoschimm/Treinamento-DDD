@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using AutoMapper.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Projeto.Curso.Core.Application.Pedidos.AutoMapper;
 using Projeto.Curso.Core.Application.Pedidos.Interfaces;
 using Projeto.Curso.Core.Application.Pedidos.Interfaces.PedidoAggregate;
 using Projeto.Curso.Core.Application.Pedidos.Services;
@@ -25,9 +27,7 @@ namespace Projeto.Curso.Core.Infra.CrossCutting.IoC
             RegisterServicesDomain(services);
             RegisterServicesRepository(services);
 
-           // services.AddSingleton(M);
-            services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService<IConfigurationProvider>(), sp.GetService));
-
+            services.AddSingleton(AutoMapperConfiguration.RegisterMappings().CreateMapper());
             services.AddScoped<PedidosContext>();
         }
 
