@@ -6,6 +6,8 @@
         type: "post",
         dataType: 'json',
         success: function (data) {
+
+            DesligaAguarde();
             oTable = $("#" + table).dataTable({
                 dom: 'Blfrtip',
                 buttons: [
@@ -46,9 +48,9 @@
                 },
                 data: data,
                 columns: colunas
-            });
+            }); 
         },
-        error: function (data) {
+        error: function (data) { 
 
         }
     });
@@ -104,7 +106,7 @@ function replaceall(str, replace, with_this) {
 }
 
 function LigaAguarde() {
-    $("#aguarde").modal('show');
+    //$("#aguarde").modal('show');
 }
 
 function DesligaAguarde() {
